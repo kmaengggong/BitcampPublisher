@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+    </head>
+    <body>
+       <form action="#">
+            *이름 : <input type="text" value="기본값" readonly><br>
+            *비번 : <input type="password"><br>
+            *메일 : <input type="mail" placeholder="이메일 입력"><br>
+            
+            *취미 :
+            <input type="checkbox"> 게임
+            <input type="checkbox" checked> 요리
+            <input type="checkbox" disabled> 담배
+            <br>
+
+            *광고데이터 수신
+            <input type="radio" name="ad" checked>예
+            <input type="radio" name="ad">아니오
+            <br>
+
+            *자동구독여부
+            <input type="radio" name="auto" checked>예
+            <input type="radio" name="auto">아니오
+            <br>
+
+            *구독 개월수
+            <input type="number" max="10" value="1">
+            <input type="range" min="0" max="5" value="0">
+            <br>
+
+            *파일첨부
+            <input type="file" multiple>
+            <br>
+
+            *히든
+            <input type="hidden">
+
+            <input type="submit" value="양식 제출">
+        </form>
+    </body>
+</html>
