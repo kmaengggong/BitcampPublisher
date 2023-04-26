@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+        <style>
+            #list li:nth-child(odd){
+                background-color: yellow;
+            }
+            #list li:nth-child(even){
+                background-color: gray;
+            }
+            #list li:first-child{
+                color: red;
+            }
+            #list li:last-child{
+                color: green;
+            }
+            #list li:nth-child(2){
+                font-style: italic;
+            }
+            #list li:nth-child(-n+2){
+                border: 2px dotted aqua;
+            }
+            #list li:nth-child(n+4){
+                border: 2px dashed violet;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <ul id="list">
+                <li>리스트1</li>
+                <li>리스트2</li>
+                <li>리스트3</li>
+                <li>리스트4</li>
+                <li>리스트5</li>
+                <li>리스트6</li>
+                <li>리스트7</li>
+            </ul>
+        </div>
+    </body>
+</html>
