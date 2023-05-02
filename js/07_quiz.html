@@ -1,0 +1,28 @@
+<!DOCTYPE>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <script>
+            // while문을 이용해 1~100 사이의 범위의 값을 하나 뽑고
+            // up and down 형식으로 맞춰나가는 게임을 만드시오
+            let answer = Math.floor(Math.random()*100)+1;
+            let input = prompt(`수를 입력하세요`);
+            
+            while(input != answer){
+                if(input > answer){
+                    input = prompt(`${input} 이하입니다. 다시 입력하세요`);
+                }
+                else if(input < answer){
+                    input = prompt(`${input} 이상입니다. 다시 입력하세요`);
+                }
+                else{
+                    break;
+                }
+            }
+            alert(`정답입니다! (정답: ${answer})`);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
