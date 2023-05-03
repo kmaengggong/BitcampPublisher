@@ -1,0 +1,24 @@
+<!DOCTYPE>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <script>
+            let lesera = ["사쿠라", "김채원", "카즈하", "허윤진", "홍은채"];
+            
+            while(lesera.length > 0){
+                let delMember = prompt("삭제할 멤버 이름을 입력하세요");
+            
+                while(!lesera.includes(delMember)){
+                    delMember = prompt(`${delMember}는 잘못된 이름입니다. (남은 멤버수: ${lesera.length})`);
+                }
+                
+                lesera.splice(lesera.indexOf(delMember), 1);
+                alert(`멤버 ${delMember}가 삭제되었습니다. (남은 멤버수: ${lesera.length})`);
+            }
+            alert("모든 멤버가 삭제되었습니다.");
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

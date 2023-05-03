@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+        <script>
+            let userInfo = {
+                userList: [
+                    {
+                        account: "kim1234",
+                        password: "kkk1234",
+                        username: "김두한"
+                    },
+                    {
+                        account: "park9876",
+                        password: "ppp9999",
+                        username: "박찬호"
+                    },
+                    {
+                        account: "hong7766",
+                        password: "hhh1234",
+                        username: "홍길동"
+                    }
+                ]
+            };
+            
+            let userLen = userInfo.userList.length;
+            let isLogin = false;
+
+            while(!isLogin){
+                let account = prompt("계정을 입력하세요");
+                let isAccount = false;
+                for(let i=0; i<userLen; i++){
+                    if(userInfo.userList[i].account === account) isAccount = true;
+                }
+                if(!isAccount){
+                    alert(`${account}은(는) 존재하지 않는 회원입니다. 다시 입력하세요.`);
+                }
+                else{
+                    let isPassword = false;
+                    
+                    do{
+                        let password = prompt("비밀번호를 입력하세요.");
+                        for(let i=0; i<userLen; i++){
+                            if(userInfo.userList[i].password === password) isPassword = true;
+                        }
+                        if(!isPassword){
+                            alert("비밀번호가 틀렸습니다. 다시 입력하세요.");
+                        }
+                        else{
+                            alert(`${account}님 환영합니다!`);
+                            isLogin = true;
+                        }
+                    } while(!isPassword);
+                }
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
