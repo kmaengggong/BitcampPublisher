@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="wrap">
+            <ul id="list1">
+                <li>리스트1</li>
+                <li>리스트2</li>
+                <li>리스트3</li>
+                <li>리스트4</li>
+                <li>리스트5</li>
+                <li>리스트6</li>
+                <li>리스트7</li>
+            </ul>
+        </div>
+
+        <script>
+            // 1. id="list1"인 요소의 자식인 <li> 요소 중
+            // 홀수번째 요소만 선택후 배경색상 yellow 적용
+            const elements = document.querySelectorAll("#list1>li");
+            let i = 1;
+            for(let $li of elements){
+                if(i%2 == 1){
+                    $li.style.background = "yellow";
+                }
+                i++;
+            }
+
+            // 2. 짝수요소 배경색 gray
+            const evenElements = document.querySelectorAll("#list1>li:nth-child(even)");
+            for(let $li of evenElements){
+                $li.style.background = "gray";
+            }
+
+            // 3. 첫뻔재 li만 폰트 red
+            const $firstElement = document.querySelector("#list1>li:first-child");
+            $firstElement.style.color = "red";
+
+            // 4. 마지막 li font green
+            const $lastElement = document.querySelector("#list1>li:last-child");
+            $lastElement.style.color = "green";
+
+            // 5. 3번째 이후 요소 border 2px dashed violet 적용
+            const threeElements = document.querySelectorAll("#list1>li");
+            let j = 1;
+            for(let $li of threeElements){
+                if(j >= 4) $li.style.border = "2px dashed violet";
+                j += 1;
+            }
+        </script>
+        <style>
+            #list1>li:nth-child(n+4){
+                color: chartreuse;
+            }
+        </style>
+    </body>
+</html>

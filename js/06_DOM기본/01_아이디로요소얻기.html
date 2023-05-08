@@ -1,0 +1,27 @@
+<!DOCTYPE>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title> 
+    </head>
+    <body>
+        <li id="apple">사과</li>
+        <li id="banana" style="background-color:  greenyellow;">바나나</li>
+        <li id="grape">포도</li>
+        <li id="peach">복숭아</li>
+
+        <script>
+            const $banana = document.getElementById("banana");
+            let setColorNumber = prompt("choose color of banana (1:yellow, 2:green)");
+            if(setColorNumber == 1){
+                $banana.style = "background-color: yellow;"; 
+            }
+            else if(setColorNumber == 2){
+                $banana.style = "background-color: green;";
+            }
+            
+            const $peach = document.getElementById("peach");
+            $peach.style = "background-color: pink;";
+        </script>
+    </body>
+</html>

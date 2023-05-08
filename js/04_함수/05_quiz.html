@@ -1,0 +1,32 @@
+<!DOCTYPE>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <script>
+            let height = prompt(`당신의 키를 입력하세요.(cm)`);
+            let weight = prompt(`당신의 몸무게를 입력하세요.(kg)`);
+
+            function calcBMI(h, w){
+                h = h/100;
+                let bmi = w / (h * h);
+
+                if(bmi >= 25.0){
+                    alert(`당신은 과체중입니다.`);
+                }
+                else if(bmi <= 18.5){
+                    alert(`당신은 저체중입니다.`);
+                }
+                else{
+                    alert(`당신은 정상체중입니다.`);
+                }
+
+                return bmi;
+            }
+
+            console.log(calcBMI(height, weight));
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
