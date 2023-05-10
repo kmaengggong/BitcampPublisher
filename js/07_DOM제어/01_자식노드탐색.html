@@ -1,0 +1,39 @@
+<!DOCTYPE>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <ul id="fruits">
+            <li class="fr apple">사과</li>
+            <li class="fr banana">바나나</li>
+            <li class="fr grape">포도</li>
+        </ul>
+
+        <div class="box">
+
+        </div>
+
+        <script>
+            const $fruits = document.getElementById("fruits");
+
+            const $children = [...$fruits.children];
+            
+            console.log($children);
+
+            // ul 첫 자식 요소 마지막 요소
+            const $first = $children[0];
+            const $last = $children[$children.length-1];
+
+            $first.style.fontSize = "2em";
+
+            $box = document.querySelector(".box");
+            console.log($box);
+
+            function hasChildren($target){
+                return !!$target.children.length;
+            }
+        </script>
+    </body>
+</html>

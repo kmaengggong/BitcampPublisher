@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+    </head>
+    <body>
+        <ul id="fruits">
+            <li>사과</li>
+            <li>바나나</li>
+            <li>포도</li>
+        </ul>
+
+        <script>
+            const $fruits = document.getElementById("fruits");
+
+            const $newLi = document.createElement("li");
+
+            $newLi.innerHTML = "망고";
+
+            //const $grape = $fruits.lastElementChild;
+            $fruits.insertBefore($newLi, $fruits.lastElementChild);
+
+            const [$apple, $banana, $mango, $grape] = $fruits.children;
+
+            $fruits.appendChild($apple);
+            $fruits.insertBefore($mango, $banana);
+        </script>
+    </body>
+</html>

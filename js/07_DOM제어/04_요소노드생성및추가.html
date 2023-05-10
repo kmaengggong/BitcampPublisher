@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+    </head>
+    <body>
+        <ul id="fruits">
+            <li>사과</li>
+        </ul>
+
+        <script>
+            const $fruits = document.getElementById("fruits");
+
+            const $newLi = document.createElement("li");
+            $newLi.className = "fr mango";
+            $newLi.id = "mango";
+            $newLi.innerHTML = "망고";
+            console.log($newLi);
+
+            $fruits.appendChild($newLi);
+
+            $fruits.style.fontSize = "1.5em";
+            const fruitsLis = $fruits.children;
+            fruitsLis[0].style.color = "red";
+            fruitsLis[1].style.color = "orange";
+            
+        </script>
+    </body>
+</html>

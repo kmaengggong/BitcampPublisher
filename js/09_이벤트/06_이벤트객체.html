@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+        <style>
+            body {
+                margin: 0 0 0 0;
+            }
+        </style>
+    </head>
+    <body>
+        <p>아무곳이나 클릭하세요</p>
+        <em class="msg"></em>
+
+        <hr>
+        <hr>
+        <hr>
+
+        <input type="text" id="text">
+        <p class="show"></p>
+
+        <div class="box" style="background-color: blue;"></div>
+
+        <script>
+            /*document.onclick = (event) => {
+                console.log(event);
+                const [x, y] = event;
+                console.log(x, ", ",  y);
+            };*/
+
+            const $box = document.querySelector(".box");
+            document.onmousemove = (e) => {
+                $box.style.width = event.x + "px";
+                $box.style.height = event.y + "px";
+            }
+
+            // em.msg click 좌표 들어가도록
+            const $msg = document.querySelector(".msg");
+            document.onclick = (e) => { 
+                $msg.textContent = `${e.x}, ${e.y}`;
+            };
+
+            const $show = document.querySelector(".show");
+            const $input = document.querySelector("input");
+
+            function inputKeyUp(e){
+                $show.textContent = $input.value;
+                console.log($input.value);
+            }
+
+            $input.addEventListener("keyup", inputKeyUp);
+        </script>
+    </body>
+</html>

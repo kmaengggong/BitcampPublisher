@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+        <style>
+            .hide {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="hideButton">텍스트를 숨기는 버튼</button>
+        <div class="text">안녕하세요</div>
+
+        <script>
+            // 버튼을 클릭하면 div태그가 숨겨지도록
+            const $hideButton = document.getElementById("hideButton");
+            const $text = document.querySelector(".text");
+
+            $hideButton.onclick = () => {
+                /*if(!$text.hasAttribute("class")){
+                    $text.setAttribute("class", "hide");
+                }
+                else{
+                    $text.removeAttribute("class");
+                }*/
+                $text.classList.toggle("hide");
+                console.log($text);
+            }
+        </script>
+    </body>
+</html>

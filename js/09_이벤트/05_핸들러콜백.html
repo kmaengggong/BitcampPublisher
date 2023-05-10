@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang='ko'>21  `EWZSA BVN65RTF .,/798UI0\[']']
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+    </head>
+    <body>
+        <button id="btn">클릭해주세요</button>
+
+        <script>
+            const hello = () => alert("안녕!");
+
+            const $btn = document.getElementById("btn");
+            $btn.addEventListener("click", hello);
+            $btn.addEventListener("click", changeBgGreen = () => {
+                $btn.style.width = 10;
+            });
+            $btn.removeEventListener("click", hello);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+        <style>
+            #fruits {
+                padding: 50px;
+                border: 2px solid red;
+            }
+            #fruits li {
+                background: yellow;
+                margin-bottom: 10px;
+            }
+    
+            #fruits li:first-child {
+                position: absolute;
+                bottom: 10%;
+                right: 5%;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="fruits">
+            <li class="apple">apple</li>
+            <li class="banana">banana</li>
+            <li class="grape">grape</li>
+        </ul>
+
+        <script>
+            const $fruits = document.getElementById("fruits");
+            const $apple = $fruits.firstElementChild;
+            const clickEvent = (e) => {
+                console.log("ul 클릭");
+                console.log(`${e.target.className} 눌렀읍니다`);
+                e.target.innerHTML += 1;
+            }
+
+            $fruits.addEventListener("click", clickEvent);
+        </script>
+    </body>
+</html>

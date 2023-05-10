@@ -1,0 +1,34 @@
+<!DOCTYPE>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <ul id="fruits">
+            <li class="fr apple">사과</li>
+            <li class="fr banana">바나나</li>
+            <li class="fr grape">포도</li>
+        </ul>
+
+        <div class="box">
+
+        </div>
+
+        <script>
+            const $fruits = document.getElementById("fruits");
+
+            const $wrap = $fruits.parentElement;
+            console.log($wrap);
+
+            // $wrap의 첫번째 자식 요소를 $apple, 저장
+            const [$apple, $banana, $grape] = [...$wrap.firstElementChild.children];
+
+            // 바나나의 이전형제의 글씨색 빨간색
+            $banana.previousElementSibling.style.color = "red";
+
+            // 사과 다음형제 다음형제 배경색 보라색
+            $apple.nextElementSibling.nextElementSibling.style.background = "purple";
+        </script>
+    </body>
+</html>

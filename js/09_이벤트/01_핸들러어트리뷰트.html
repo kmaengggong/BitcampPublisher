@@ -1,0 +1,50 @@
+<!DOCTYPE>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: orange;
+                margin: 20px;
+            }
+            .box.red {
+                background-color: red;
+            }
+            .box.green {
+                background-color: yellowgreen;
+                font-size: 25px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box" onclick="alert(`첫 번째 박스 클릭함.`)"></div>
+        <div class="box red"></div>
+        <div class="box green" onmouseover="appendHello()" onmouseout="deleteHello()"></div>
+        
+        <script>
+            const $redbox = document.querySelector(".red");
+            $redbox.onclick = event => {
+                if(event.detail === 1) $redbox.style.width = `${$redbox.offsetWidth * 2}px`;
+                else if(event.detail === 2) $redbox.style.width = `${$redbox.offsetWidth / 2}px`;
+            }
+            function widthDivTwo(){
+                const $redbox = document.querySelector(".red");
+                $redbox.style.width = `${$redbox.offsetWidth / 2}px`;
+            }
+            function appendHello(){
+                const $greenbox = document.querySelector(".green");
+                $greenbox.innerHTML += "안녕";
+            }
+            const deleteHello = () => {
+                const $greenbox = document.querySelector(".green");
+                $greenbox.innerHTML = "";
+            };
+        </script>
+    </body>
+</html>

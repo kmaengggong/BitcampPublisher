@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+        <style>
+            #fruits {
+                display: flex;
+                list-style: none;
+                padding: 20px;
+                border: 2px solid red;
+                flex-wrap: wrap;
+            }
+    
+            #fruits li {
+                width: 100px;
+                cursor: pointer;
+                background: orange;
+                margin-right: 10px;
+            }
+    
+            .active {
+                color: red;
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="fruits">
+            <li id="apple" class="active">Apple</li>
+            <li id="banana">Banana</li>
+            <li id="grape">Grape</li>
+        </ul>
+
+        <div>현재 고른 과일 : <em class="msg">Apple</div>
+
+        <label>
+            새로운 과일을 추가해주세요
+            <input type="text" class="text-box">
+            <button id="add">추가</button>
+        </label>
+
+        <script>
+            const $fruits = document.getElementById("fruits");
+
+            const removeActive = () => {
+                for(let $li of [...$fruits.children]){
+                    if($li.classList.contains("active")){
+                        $li.classList.remove("active");
+                    }
+                }
+            }
+
+            const $msg = document.querySelector(".msg");
+            $fruits.onclick = e => {
+                console.log(e.target);
+                if(!e.target.matches("#fruits li")){
+                    return;
+                }
+                
+                //1. class에 active에 걸린 li active 제거
+                removeActive();
+
+                // 2. 새로 클릭한 대상(e.target)에 active클래스 새로 부여
+                e.target.classList.add("active");
+
+                // 3. 텍스트를 em.msg에 복사
+                $msg.textContent = e.target.textContent;
+            }
+
+            
+        </script>
+    </body>
+</html>

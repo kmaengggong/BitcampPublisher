@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>우리 고유의 음식</h1>
+        <h3>클릭하면 설명이 나옵니다.</h3>
+        <ul>
+            <li id="k">김치</li>
+            <li id="s">삼겹살</li>
+            <li id="g">감자전</li>
+            <li id="m">막걸리</li>
+        </ul>
+
+        <script>
+            const [$k, $s, $g, $m] = document.querySelectorAll("li");
+
+            $k.onclick = () => alert("김치는 우리의 음식입니다.");
+            $s.onclick = () => alert("삼겹살은 불판에 고기를 구어먹습니다..");
+            $g.onclick = () => alert("감자전은 비올 때 먹습니다.");
+            $m.onclick = () => alert("막걸리는 쌀로 만듭니다.");
+        </script>
+    </body>
+</html>

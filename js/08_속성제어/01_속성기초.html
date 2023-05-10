@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+    </head>
+    <body>
+        <input type="email" id="account" value="abc@gmail.com">
+
+        <script>
+            const $input = document.getElementById("account");
+
+            $input.id = "acc";
+            $input.value = "zzz";
+            $input.type = "checkbox";
+
+            console.dir($input);
+        </script>
+    </body>
+</html>

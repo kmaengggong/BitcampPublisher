@@ -1,0 +1,43 @@
+<!DOCTYPE>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+            button {
+                width: 100px;
+                height: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="b1"></button>
+        <button id="b2"></button>
+        <button id="b3"></button>
+
+        <script>
+            const [$b1, $b2, $b4] = document.querySelectorAll("button");
+            const sayHello = (button) => {
+                alert("안녕하세요");
+                if(button.innerHTML === "안녕") button.innerHTML = "";
+                else button.innerHTML = "안녕";
+            }
+
+            $b1.onclick = () => sayHello($b1);
+
+            // b2 클릭 배경 빨간색
+            $b2.onclick = () => {
+                $b2.style.backgroundColor = "red";
+            }
+
+            // b2 마우스 올라가면 배경 파란색
+            $b2.onmouseover = () => {
+                $b2.style.backgroundColor = "blue";
+            }
+
+            // b2 마우스 내려가면 배경 노란색
+            const changeBgYellow = (button) => button.style.backgroundColor = "yellow";
+            $b2.onmouseout = () => changeBgYellow($b2);
+        </script>
+    </body>
+</html>
